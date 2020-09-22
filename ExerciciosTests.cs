@@ -28,6 +28,15 @@ namespace entra_21_tests_lista_2
                  Assert.Equal(expectativa[i],resultado[i]);
             }
         }
+        [Theory]
+        [InlineData(new double[10]{2,5,6,8,65,33,98,66,875,11},97,"O numero não existe no array")]
+        [InlineData(new double[10]{2,5,6,8,65,33,98,66,875,11},98,"O numero existe no array")]
+        public void Verificar_se_um_numero_esta_presente_no_array(double[] array,double numero,string expectativa)
+        {
+            var exercicio = new Exercicios();
+            var resultado = exercicio.Exercicio03(array,numero);
+            Assert.Equal(expectativa,resultado);
+        }
 
     }
 }

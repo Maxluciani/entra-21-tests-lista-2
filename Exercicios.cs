@@ -26,5 +26,21 @@ namespace entra_21_tests_lista_2
              }
              return resultado;
         }
+        public string Exercicio03(double[] array,double numero)
+        {
+            //Leia 10 elementos e armazene em um array A. Em seguida, solicite pelo 
+         //teclado um número qualquer e pesquise no array se o número existe.
+             var resultado = "O numero não existe no array";
+             for (int i = 0; i < array.Length; i++)
+             {
+                 if(array[i] == numero)
+                 {
+                     resultado = "O numero existe no array";
+                     return resultado;
+                 }
+             }
+                 return resultado;
+
+        }
     }
 }
