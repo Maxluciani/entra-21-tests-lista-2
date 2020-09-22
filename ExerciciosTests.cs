@@ -1,4 +1,4 @@
-using System;
+
 using Xunit;
 
 namespace entra_21_tests_lista_2
@@ -13,8 +13,9 @@ namespace entra_21_tests_lista_2
             var resultado = exercicio.Exercicio02(array10);
             for (int i = 0; i < expectativa.Length; i++)
             {
-                Assert.Equal(expectativa[i],resultado[i]);
+                 Assert.Equal(expectativa[i],resultado[i]);
             }
         }
+
     }
 }
