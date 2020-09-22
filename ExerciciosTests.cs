@@ -16,6 +16,18 @@ namespace entra_21_tests_lista_2
                  Assert.Equal(expectativa[i],resultado[i]);
             }
         }
+        [Theory]
+        [InlineData(new double[10]{2,4,6,8,10,12,14,16,18,20},new double[10]{1,2,3,4,5,6,7,8,9,10},
+        new double[10]{1,2,3,4,5,6,7,8,9,10})]
+        public void array_c(double[] arraya,double[] arrayb,double[] arrayc)
+        {
+         var exercicio = new Exercicios();
+         var resultado = exercicio.Exercicio01(arraya,arrayb);
+         for (int i = 0; i < arrayc.Length; i++)
+         {
+             Assert.Equal(arrayc[i],resultado[i]);
+         }
+        }
 
     }
 }
