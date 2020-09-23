@@ -42,5 +42,34 @@ namespace entra_21_tests_lista_2
                  return resultado;
 
         }
+        public int[] Exercicio05(double[] array)
+        {
+            //Leia um array A com 15 elementos, e calcule a média aritmética dos mesmos, 
+           //em seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
+           var resultado = new int[3];
+           var media = 0.0;
+           var soma = 0.0;
+           for (int i = 0; i < array.Length; i++)
+           {
+               soma += array[i];
+           }
+               media = soma / array.Length;
+               foreach (var item in array)
+               {
+                   if(item < media)
+                   {
+                       resultado[0] ++;
+                   }
+                   else if(item == media)
+                   {
+                       resultado[1] ++;
+                   }
+                   else
+                   {
+                       resultado[2] ++;
+                   }
+               }
+                   return resultado;
+        }
     }
 }
