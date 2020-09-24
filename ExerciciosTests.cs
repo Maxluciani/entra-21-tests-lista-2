@@ -38,6 +38,17 @@ namespace entra_21_tests_lista_2
             Assert.Equal(expectativa,resultado);
         }
         [Theory]
+        [InlineData(new double[10]{1,2,3,4,5,6,7,8,9,10},new double[10]{1,2,3,4,5,6,7,8,9,
+        10},"Os arrays são iguais.")]
+        [InlineData(new double[10]{1,2,3,4,5,6,7,8,9,10},new double[10]{1,2,3,4,5,6,55,8,9,
+        10},"Os arrays são diferentes.")]
+         public void Verificar_se_os_arrys_sao_iguais(double[] arraya,double[] arrayb,string expectativa)
+        {
+            var exercicios = new Exercicios();
+            var resultado = exercicios.Exercicio04(arraya,arrayb);
+            Assert.Equal(expectativa,resultado);
+        }
+        [Theory]
         [InlineData(new double[15]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},new int[3]{7,1,7})]
         [InlineData(new double[3]{6,10,15},new int[3]{2,0,1})]
         public void media_dos_numeros_de_um_array(double[] array,int[] esperado)
@@ -46,16 +57,5 @@ namespace entra_21_tests_lista_2
           var resultado = exercicio.Exercicio05(array);
           Assert.Equal(esperado,resultado);
         }
-          [Theory]
-          [InlineData(new double[10]{1,2,3,4,5,6,7,8,9,10},new double[10]{1,2,3,4,5,6,7,8,9,
-         10},"Os arrays são iguais.")]
-         [InlineData(new double[10]{1,2,3,4,5,6,7,8,9,10},new double[10]{1,2,3,4,5,6,55,8,9,
-         10},"Os arrays são diferentes.")]
-            public void Verificar_se_os_arrys_sao_iguais(double[] arraya,double[] arrayb,string expectativa)
-            {
-                var exercicios = new Exercicios();
-                var resultado = exercicios.Exercicio04(arraya,arrayb);
-                Assert.Equal(expectativa,resultado);
-            }
     }
 }
