@@ -71,5 +71,20 @@ namespace entra_21_tests_lista_2
                }
                    return resultado;
         }
+        public string Exercicio04(double[] arraya,double[] arrayb)
+        {
+            // 4-Leia dois arrays A e B com 10 elementos. Em seguida, compare os arrays e verifique se
+            // os mesmos são iguais ou diferentes.
+            var resultado = "Os arrays são iguais.";
+            for (int i = 0; i < arraya.Length; i++)
+            
+            {
+                if(arraya[i] != arrayb[i])
+                {
+                    resultado = "Os arrays são diferentes.";
+                }
+            }
+            return resultado;
+        }
     }
 }
