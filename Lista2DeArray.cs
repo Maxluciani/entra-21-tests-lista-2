@@ -34,6 +34,62 @@ namespace entra_21_tests_lista_2
           }
           return repeat;
         }
+        public (int sim,int nao,int homemnao,int mulhersim) Exercicio2_03((int sexo,int gostou)[] entrevistados)
+        {
+          //Um certa empresa fez uma pesquisa para saber se as
+          // pessoas gostaram ou não de um novo
+         // produto lançado no mercado. Para isso, ,
+         //forneceu-se o sexo do entrevistado e a sua resposta
+         // (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, 
+         //fazer um algoritmo que calcule e
+         // escreva:
+         // • O número de pessoas que responderam sim;
+         // • O número de pessoas que responderam não;
+         // • A percentagem de pessoas do sexo feminino que responderam sim;
+         // • A percentagem de pessoas do sexo masculino que responderam não;
+          (int homens,int sim,int nao) homens = (0,0,0);
+         (int mulheres,int sim,int nao) mulheres = (0,0,0);
+         var sim = 0;
+         var nao = 0;
+         var mulhersim = 0;
+         var homemnao = 0;
+          foreach (var item in entrevistados)
+
+          {
+          
+          
+           if (item.sexo == 1)
+           {
+
+           homens.homens++;
+           if ( item.gostou == 1)
+           {
+             homens.sim++;
+           }
+           else{
+             homens.nao++;
+           }  
+           }
+           else
+           {
+             mulheres.mulheres++;
+             if (item.gostou == 1)
+             {
+               mulheres.sim++;
+             }
+             else
+             {
+               mulheres.nao++;
+             }
+           }
+          }
+          sim = (homens.sim + mulheres.sim);
+          nao = (homens.nao + mulheres.nao);
+          homemnao = homens.nao;
+          mulhersim = mulheres.sim;
+          return (sim, nao,homemnao,mulhersim);          
+
+        }
         public int Exercicio2_04(int[] a)
         {
           //Desenvolver um programa que efetue a leitura de cinco elementos de uma matriz 
@@ -104,62 +160,6 @@ namespace entra_21_tests_lista_2
              }
          }
          return palavra;
-        }
-        public (int sim,int nao,int homemnao,int mulhersim) Exercicio2_03((int sexo,int gostou)[] entrevistados)
-        {
-          //Um certa empresa fez uma pesquisa para saber se as
-          // pessoas gostaram ou não de um novo
-         // produto lançado no mercado. Para isso, ,
-         //forneceu-se o sexo do entrevistado e a sua resposta
-         // (sim ou não). Sabendo-se que foram entrevistadas 10 pessoas, 
-         //fazer um algoritmo que calcule e
-         // escreva:
-         // • O número de pessoas que responderam sim;
-         // • O número de pessoas que responderam não;
-         // • A percentagem de pessoas do sexo feminino que responderam sim;
-         // • A percentagem de pessoas do sexo masculino que responderam não;
-          (int homens,int sim,int nao) homens = (0,0,0);
-         (int mulheres,int sim,int nao) mulheres = (0,0,0);
-         var sim = 0;
-         var nao = 0;
-         var mulhersim = 0;
-         var homemnao = 0;
-          foreach (var item in entrevistados)
-
-          {
-          
-          
-           if (item.sexo == 1)
-           {
-
-           homens.homens++;
-           if ( item.gostou == 1)
-           {
-             homens.sim++;
-           }
-           else{
-             homens.nao++;
-           }  
-           }
-           else
-           {
-             mulheres.mulheres++;
-             if (item.gostou == 1)
-             {
-               mulheres.sim++;
-             }
-             else
-             {
-               mulheres.nao++;
-             }
-           }
-          }
-          sim = (homens.sim + mulheres.sim);
-          nao = (homens.nao + mulheres.nao);
-          homemnao = homens.nao;
-          mulhersim = mulheres.sim;
-          return (sim, nao,homemnao,mulhersim);          
-
         }
     }
 }

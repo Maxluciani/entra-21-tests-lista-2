@@ -24,6 +24,19 @@ namespace entra_21_tests_lista_2
         var resultado = exercicios.exercicio2_02(numero);
         Assert.True(resultado);
       }
+      [Fact]
+      public void Quantas_pessoas_gostam_de_um_produto() 
+      {
+        var entrevistados = new (int sexo,int gostou)[5]{(1,1),(1,2),(2,2),(2,1),(1,2)};
+        var exercicios = new Lista2DeArray();
+        var resultado = exercicios.Exercicio2_03(entrevistados);
+        Assert.Equal(2,resultado.sim);
+        Assert.Equal(3,resultado.nao);
+        Assert.Equal(2,resultado.homemnao);
+        Assert.Equal(1,resultado.mulhersim);
+
+
+      }
       [Theory]
       [InlineData(new int[5]{5,8,12,7,9},21)]
       public void Soma_dos_elementos_impares(int[] a, int sum)
@@ -67,19 +80,6 @@ namespace entra_21_tests_lista_2
         var palavra = exercicios.exercicio2_09(a);
         Assert.Equal(palavra,letra);
       }
-      [Fact]
       
-      public void Quantas_pessoas_gostam_de_um_produto() 
-      {
-        var entrevistados = new (int sexo,int gostou)[5]{(1,1),(1,2),(2,2),(2,1),(1,2)};
-        var exercicios = new Lista2DeArray();
-        var resultado = exercicios.Exercicio2_03(entrevistados);
-        Assert.Equal(2,resultado.sim);
-        Assert.Equal(3,resultado.nao);
-        Assert.Equal(2,resultado.homemnao);
-        Assert.Equal(1,resultado.mulhersim);
-
-
-      }
     }
 }
