@@ -105,7 +105,7 @@ namespace entra_21_tests_lista_2
          }
          return palavra;
         }
-        public int Exercicio2_03(int[] entrevistados)
+        public (int sim,int nao,int homemnao,int mulhersim) Exercicio2_03((int sexo,int gostou)[] entrevistados)
         {
           //Um certa empresa fez uma pesquisa para saber se as
           // pessoas gostaram ou não de um novo
@@ -120,15 +120,20 @@ namespace entra_21_tests_lista_2
          // • A percentagem de pessoas do sexo masculino que responderam não;
           (int homens,int sim,int nao) homens = (0,0,0);
          (int mulheres,int sim,int nao) mulheres = (0,0,0);
-          for (int i = 0; i < entrevistados.Length; i++)
+         var sim = 0;
+         var nao = 0;
+         var mulhersim = 0;
+         var homemnao = 0;
+          foreach (var item in entrevistados)
+
           {
-           var genero = 0;
-           var gostou = 0;
-           if (genero == 1)
+          
+          
+           if (item.sexo == 1)
            {
 
            homens.homens++;
-           if ( gostou == 1)
+           if ( item.gostou == 1)
            {
              homens.sim++;
            }
@@ -139,7 +144,7 @@ namespace entra_21_tests_lista_2
            else
            {
              mulheres.mulheres++;
-             if (gostou == 1)
+             if (item.gostou == 1)
              {
                mulheres.sim++;
              }
@@ -149,6 +154,12 @@ namespace entra_21_tests_lista_2
              }
            }
           }
+          sim = (homens.sim + mulheres.sim);
+          nao = (homens.nao + mulheres.nao);
+          homemnao = homens.nao;
+          mulhersim = mulheres.sim;
+          return (sim, nao,homemnao,mulhersim);          
+
         }
     }
 }
