@@ -118,6 +118,28 @@ namespace entra_21_tests_lista_2
           }
           return positive;
         }
+        public (double maior,int posicao) exercicio2_06(double[] a)
+        {
+            //Ler um vetor de 10 posições 
+            //Escrever a seguir o valor do maior elemento de Q 
+            //e a respectiva posição que ele ocupa no vetor.
+            (double great,int position)greatnumber = (0.0,0);
+            var maior =0.0;
+            var posicao =0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                
+               if (a[i] > greatnumber.great)
+               {
+                 greatnumber.great = a[i];
+                 greatnumber.position = i;
+               }
+            }
+             maior = greatnumber.great;
+             posicao = greatnumber.position;
+            return (maior,posicao);
+
+        }
         public int exercicio2_07(int[] a)
         {
          //Crie e popule um vetor A e imprima na tela o número de vezes que existe 

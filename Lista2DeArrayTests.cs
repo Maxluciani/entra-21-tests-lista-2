@@ -53,6 +53,17 @@ namespace entra_21_tests_lista_2
         var resultado = exercicios.exercicio2_05(a);
         Assert.Equal(resultado,positive);
       }
+      [Fact]
+      public void Maior_numero_e_sua_posição()
+      {
+        var array = new double[10]{1,3,5,89,7,4,2,8,0,11};
+        var exercicios = new Lista2DeArray();
+        var resultado = exercicios.exercicio2_06(array);
+        
+        Assert.Equal(89,resultado.maior);
+        Assert.Equal(3,resultado.posicao);
+        
+      }
       [Theory]
       [InlineData(new int[10]{3,5,8,3,5,66,23,7,12,9},3)]
       public void Quantas_vezes_que_um_numero_reside_na_sua_mesma_posição(int[] a,int match)
@@ -80,6 +91,7 @@ namespace entra_21_tests_lista_2
         var palavra = exercicios.exercicio2_09(a);
         Assert.Equal(palavra,letra);
       }
+      
       
     }
 }
